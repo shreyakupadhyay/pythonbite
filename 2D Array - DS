@@ -1,0 +1,17 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+# Creates a list containing 5 lists initialized to 0
+arr_2_d = [[0 for x in range(6)] for x in range(6)]
+for j in range(0,6):
+    arr = [int(i) for i in raw_input().strip().split()]
+    for k in range(0,6):
+        arr_2_d[j][k] = arr[k] 
+
+max_val = -100        
+for i in range(0,4):
+    for j in range(0,4):
+        count = 0
+        count = arr_2_d[i][j] + arr_2_d[i][j+1] + arr_2_d[i][j+2] + arr_2_d[i+1][j+1] + arr_2_d[i+2][j] + arr_2_d[i+2][j+1] + arr_2_d[i+2][j+2]
+        if(count >= max_val):
+            max_val = count
+        
+print max_val
