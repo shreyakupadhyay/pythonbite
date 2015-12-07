@@ -1,0 +1,50 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+test_num = int(raw_input())
+for i in range(0,test_num):
+    array_size = int(raw_input())
+    array = [int(j) for j in raw_input().strip().split()]
+    count=0
+    max_count = 0
+    index = 0
+    positive_count = 0
+    negative_count = 0
+    max_positive = 0
+    endIndex=0
+    startIndex = 0
+    min_negative = -10000
+    negative = 0
+    total_negative = 0
+    currStartIndex = 0;
+    for k in range(0,array_size):
+        count = count + array[k]
+        if(count > max_count ):
+            max_count = count
+            endIndex = index;
+            startIndex = currStartIndex;
+        if(count < 0):
+            count = 0
+            currStartIndex = k + 1;
+            negative = array[k]
+            if((negative)*(-1) < (min_negative)*(-1)):
+                min_negative = negative
+        if(array[k] < 0):
+            #index = k
+            total_negative = total_negative + 1
+            if((array[k])*(-1) < (min_negative)*(-1)):
+                min_negative = array[k]
+            #negative_count = negative_count + array[k]
+        if(array[k] >= 0):
+            # positive_count = positive_count + array[k]
+            max_positive = max_positive + array[k]
+        #if((negative_count)*(-1) < positive_count):
+         #   count = count + array[k]
+        #if(negative_count*(-1) >= positive_count):
+         #   k = index
+            #count = count - positive_count + negative_count
+            #  count = 0
+        
+    if(total_negative == array_size):
+        print min_negative , min_negative
+    else:
+        print max_count, max_positive
+        
