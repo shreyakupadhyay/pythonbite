@@ -1,0 +1,18 @@
+test_case = input()
+for i in range(0,test_case):
+    number = input()
+    if(number%3==0):
+        print "555"*(number/3)
+    elif(number%3==1 and number>=10):
+        print "555"*((number-10)/3) + "3333333333"
+    elif(number%3==2 and number>=5):
+        print "555"*((number-5)/3) + "33333"
+    elif(number==1):
+        print "-1"
+    elif(number==2):
+        print "-1"
+    elif(number==4):
+        print "-1"
+    elif(number==7):
+        print "-1"
+     
