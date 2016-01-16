@@ -1,0 +1,15 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+from __future__ import print_function
+val = raw_input()
+arr=[]
+for i in range(0,len(val)):
+    arr.append(val[i])
+
+for j in range(0,len(arr)):
+    if(arr[j]>='a' and arr[j]<='z'):
+        arr[j] = arr[j].upper()
+    elif(arr[j]>='A' and arr[j]<='Z'):
+        arr[j] = arr[j].lower()
+
+for k in range(0,len(arr)):
+    print(arr[k],end='')
