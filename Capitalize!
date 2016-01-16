@@ -1,0 +1,17 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+from __future__ import print_function
+test = raw_input()
+array=[]
+for i in range(0,len(test)):
+    array.append(test[i])
+
+#print array
+
+for j in range(0,len(array)):
+    array[0]=array[0].upper()
+    if(array[j]==" "):
+        array[j+1] = array[j+1].upper()
+        #print (array[j] , end='')
+
+for k in range(0,len(array)):
+    print (array[k] , end='')
